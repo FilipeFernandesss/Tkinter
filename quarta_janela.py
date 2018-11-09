@@ -1,6 +1,7 @@
 # Quarta janela(incluir itens)
 from tkinter import *
 from tkinter import messagebox
+from terceira_janela import Terceira_Janela
 
 class Quarta_Janela(Toplevel):
     def __init__(self, parent):
@@ -10,6 +11,7 @@ class Quarta_Janela(Toplevel):
         self.title('Deletar Itens')
         self.transient(parent)
         self.grab_set()
+
 
         #Widget
 
@@ -29,4 +31,5 @@ class Quarta_Janela(Toplevel):
 
     def bt_click(self):
         print(self.ent.get())
+
         self.destroy()

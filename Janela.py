@@ -6,10 +6,10 @@ from terceira_janela import Terceira_Janela
 from quarta_janela import Quarta_Janela
 
 class Janela_principal(Tk):
-    def __init__(self, view):
+    def __init__(self, controle):
         super().__init__()
-        self.view = view
-        self.control = Control
+        #self.view = view
+        self.control = controle
 
         #Ajustar o tamanho
         self.geometry('300x300+200+200')
@@ -44,3 +44,11 @@ class Janela_principal(Tk):
 
     def criar_quarta_janela(self):
         Quarta_Janela(self)
+
+    #Método para o btn_on_click
+    def btn_on_click(self):
+        #Recuperar a lista de compras
+        lista_compras = self.controle.get_lista_compras()
+        #Percorrer a lista
+        for item in lista_compras:
+            messagebox.showinfo('Item', item.to_string())
