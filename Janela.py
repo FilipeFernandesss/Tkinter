@@ -2,7 +2,8 @@ from tkinter import *
 from tkinter import messagebox
 from control import Control
 from segunda_janela import Segunda_Janela
-
+from terceira_janela import Terceira_Janela
+from quarta_janela import Quarta_Janela
 
 class Janela_principal(Tk):
     def __init__(self, view):
@@ -18,8 +19,8 @@ class Janela_principal(Tk):
 
         #Widgets
         self.btn_exibir = Button(self ,width=10, text='Exibir itens', command=self.criar_segunda_janela)
-        self.btn_incluir = Button(self, width=10, text='Incluir itens')
-        self.btn_excluir = Button(self, width=10, text='Excluir itens')
+        self.btn_incluir = Button(self, width=10, text='Incluir itens', command=self.criar_terceira_janela)
+        self.btn_excluir = Button(self, width=10, text='Excluir itens', command=self.criar_quarta_janela)
         self.btn_sair = Button(self, width=10, text='Sair', command=self.destroy)
 
 
@@ -37,3 +38,9 @@ class Janela_principal(Tk):
 
     def criar_segunda_janela(self):
         Segunda_Janela(self)
+
+    def criar_terceira_janela(self):
+        Terceira_Janela(self)
+
+    def criar_quarta_janela(self):
+        Quarta_Janela(self)
